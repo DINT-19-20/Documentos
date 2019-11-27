@@ -1,0 +1,28 @@
+﻿<Window x:Class="Documentos.Configuracion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Documentos"
+        mc:Ignorable="d"
+        Title="Configuracion" Height="136.046" Width="317.442" ShowInTaskbar="False" ResizeMode="NoResize" FocusManager.FocusedElement="{Binding ElementName=AnchoTextBox}" Icon="config.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Ancho</TextBlock>
+        <TextBox x:Name="AnchoTextBox" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding RelativeSource={RelativeSource AncestorType=local:Configuracion},Path=Ancho}"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Alto</TextBlock>
+        <TextBox x:Name="AltoTextBox" Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding RelativeSource={RelativeSource AncestorType=local:Configuracion},Path=Alto}"></TextBox>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="AceptarButton" Margin="5" IsDefault="True" Click="AceptarButton_Click">Aceptar</Button>
+            <Button Margin="5" IsCancel="True">Cancelar</Button>
+        </StackPanel>
+    </Grid>
+</Window>
